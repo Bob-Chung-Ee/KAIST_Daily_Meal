@@ -7,7 +7,7 @@
 
 ## 🚀 We made it
 
-![slack_emoji](https://user-images.githubusercontent.com/63194662/196346371-115cf7eb-bd4b-4eb6-a0cf-d58b5b2735f2.png)
+![slack_emoji](https://user-images.githubusercontent.com/63194662/196395320-a932ee01-bd82-49e6-9ba3-c220e0da7085.png)
 
 ## 🚀Usage
 
