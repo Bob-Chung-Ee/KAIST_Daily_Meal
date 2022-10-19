@@ -72,23 +72,26 @@ def crawl_meal(dinner_or_lunch):
     for i in range(0, len(dinner) - 2, 2):
         tmp_dinner.append(get_hangul(dinner[i]))
     
-    #morning
+    #breakfast
     if dinner_or_lunch == "breakfast":
-        send_slack_webhook("Have a nice breakfast")
-        res = ','.join(tmp_breakfast)
+        res = "🍚오늘 아침 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_breakfast)
+        res += meal
         print(send_slack_webhook(res))
     #lunch
     elif dinner_or_lunch == "lunch":
-        send_slack_webhook("Have a nice lunch!!!")
-        res = ','.join(tmp_lunch)
+        res = "🍚오늘 점심 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_lunch)
+        res += meal
         print(send_slack_webhook(res))    
     #dinner
     elif dinner_or_lunch == "dinner":
-        send_slack_webhook("Have a nice dinner!!!")
-        res = ','.join(tmp_dinner)
+        res = "🍚오늘 저녁 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_dinner)
+        res += meal
         print(send_slack_webhook(res))
 
-    return 'menu has benn checked'
+    return 'menu has been checked'
 
 
 # scrappingOncePerDay("breakfast")
