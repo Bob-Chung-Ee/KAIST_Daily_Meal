@@ -73,19 +73,19 @@ def crawl_meal(dinner_or_lunch):
         tmp_dinner.append(get_hangul(dinner[i]))
     
     #breakfast
-    if dinner_or_lunch == "breakfast":
+    if dinner_or_lunch == "breakfast" and tmp_breakfast:
         res = "🍚오늘 아침 메뉴 입니다!🍜\n\n"
         meal = ','.join(tmp_breakfast)
         res += meal
         print(send_slack_webhook(res))
     #lunch
-    elif dinner_or_lunch == "lunch":
+    elif dinner_or_lunch == "lunch" and tmp_lunch:
         res = "🍚오늘 점심 메뉴 입니다!🍜\n\n"
         meal = ','.join(tmp_lunch)
         res += meal
         print(send_slack_webhook(res))    
     #dinner
-    elif dinner_or_lunch == "dinner":
+    elif dinner_or_lunch == "dinner" and tmp_dinner:
         res = "🍚오늘 저녁 메뉴 입니다!🍜\n\n"
         meal = ','.join(tmp_dinner)
         res += meal
