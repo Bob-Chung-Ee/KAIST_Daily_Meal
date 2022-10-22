@@ -21,7 +21,7 @@ tmp_lunch = []
 tmp_dinner = []
 
 #slack client
-slackWebhookUrl = "<input webhook token>"
+slackWebhookUrl = "https://hooks.slack.com/services/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"
 
 def send_slack_webhook(str_text):
     headers = {
@@ -74,42 +74,30 @@ def crawl_meal(dinner_or_lunch):
     
     #breakfast
     if dinner_or_lunch == "breakfast":
-        if len(tmp_breakfast) < 2:
-            res = "🍌오늘 아침 메뉴는 존재하지 않습니다🥪\n\n"
-        else:
-            res = "🍌오늘 아침 메뉴 입니다!🥪\n\n"
-            meal = ','.join(tmp_breakfast)
-            res += meal
-
+        res = "🍚오늘 아침 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_breakfast)
+        res += meal
         print(send_slack_webhook(res))
     #lunch
     elif dinner_or_lunch == "lunch":
-        if len(tmp_lunch) < 2:
-            res = "🍚오늘 점심 메뉴는 존재하지 않습니다🍜\n\n"
-        else:
-            res = "🍚오늘 점심 메뉴 입니다!🍜\n\n"
-            meal = ','.join(tmp_lunch)
-            res += meal
-
-        print(send_slack_webhook(res))   
+        res = "🍚오늘 점심 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_lunch)
+        res += meal
+        print(send_slack_webhook(res))    
     #dinner
     elif dinner_or_lunch == "dinner":
-        if len(tmp_dinner) < 2:
-            res = "🍖오늘 저녁 메뉴는 존재하지 않습니다🥗\n\n"
-        else:
-            res = "🍖오늘 저녁 메뉴 입니다!🥗\n\n"
-            meal = ','.join(tmp_dinner)
-            res += meal
-
+        res = "🍚오늘 저녁 메뉴 입니다!🍜\n\n"
+        meal = ','.join(tmp_dinner)
+        res += meal
         print(send_slack_webhook(res))
 
     return 'menu has been checked'
 
 
 # scrappingOncePerDay("breakfast")
-schedule.every().day.at("07:00").do(lambda: crawl_meal("breakfast"))
+schedule.every().day.at("15:08").do(lambda: crawl_meal("breakfast"))
 schedule.every().day.at("11:00").do(lambda: crawl_meal("lunch"))
-schedule.every().day.at("07:00").do(lambda: crawl_meal("dinner"))
+schedule.every().day.at("17:00").do(lambda: crawl_meal("dinner"))
 
 while True:
     schedule.run_pending()
