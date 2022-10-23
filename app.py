@@ -109,7 +109,7 @@ def crawl_meal(dinner_or_lunch):
 # scrappingOncePerDay("breakfast")
 schedule.every().day.at("07:00").do(lambda: crawl_meal("breakfast"))
 schedule.every().day.at("11:00").do(lambda: crawl_meal("lunch"))
-schedule.every().day.at("07:00").do(lambda: crawl_meal("dinner"))
+schedule.every().day.at("17:00").do(lambda: crawl_meal("dinner"))
 
 while True:
     schedule.run_pending()
