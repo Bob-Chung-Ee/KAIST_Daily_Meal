@@ -16,6 +16,15 @@
     - 점심: 오전 11시
     - 저녁: 오후 5시
 
+## 🚀install
+
+find the code below(app.py line-24)
+
+```
+slackWebhookUrl = "<input webhook token>"
+```
+and insert your webhook token, where you can get from your slack channel
+
 ## 🚀It works!
 
 ![image](https://user-images.githubusercontent.com/63194662/216816228-0dbacce4-a315-40c3-8c5b-f7aeff16f14b.png)
